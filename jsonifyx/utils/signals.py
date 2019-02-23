@@ -26,12 +26,16 @@ def on_change(input_widget, widget, new_text):
     :return:
     """
     logger.debug(f"Signal fired: {new_text}")
-    try:
-        new_text = jsonify(new_text)
-        logger.info(f"JSONIFY: {new_text}")
-        input_widget.set_text(new_text)
-    except Exception:
-        input_widget.set_text("Bad JSON.")
+    if new_text:
+        try:
+            new_text = jsonify(new_text)
+            logger.info(f"JSONIFY: {new_text}")
+            input_widget.set_text(new_text)
+        except Exception:
+            logger.warning(f"Signal fired bad json: {new_text}")
+            input_widget.set_text("Bad JSON.")
+    else:
+        input_widget.set_text("")
 
 
 def on_clear(input_widget, widget):
