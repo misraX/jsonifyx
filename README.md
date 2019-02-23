@@ -1,5 +1,11 @@
 ### Installation:
 
+`git clone git@github.com:misraX/jsonifyx.git`
+
+`cd jsonifyx && virtualenv venv`
+
+`source venv/bin/activate`
+
 `pip install -r requirement.txt`
 
 `python3 start.py`
