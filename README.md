@@ -1,5 +1,8 @@
 jsonifyx is a Terminal based application for beautifying json using urwid and python.
 
+
+![screenshot](https://raw.githubusercontent.com/misraX/jsonifyx/master/jsonifyx/screenshot/jsonifyX.png)
+
 ### Installation:
 
 `git clone git@github.com:misraX/jsonifyx.git`
