@@ -30,18 +30,17 @@ def main():
 
     logger.debug(f"{left_cell.__class__.__name__} editable text: {input_text.text}")
 
-    esc = urwid.Button("Exit")
+    esc_btn = urwid.Button("Exit")
     clear_btn = urwid.Button("Clear")
-    esc_button = padding_attr_map(urwid.Columns([esc]))
+    # esc_button = padding_attr_map(urwid.Columns([esc]))
 
     # input_text = left_cell.input_text()
     output_text = urwid.Text("")
 
     right_cell = OutputCell(input_widget=input_text, output_text=output_text, callback=on_change)
-
+    btns_col = urwid.Columns([line_attr_map(clear_btn), line_attr_map(esc_btn)])
     grid_flow = padding_attr_map(line_attr_map(
-        urwid.GridFlow([line_attr_map(left_cell), line_attr_map(right_cell), esc_button, clear_btn], 100, 0, 0,
-                       ('center'))))
+        urwid.GridFlow([line_attr_map(left_cell), line_attr_map(right_cell), btns_col], 100, 0, 0, ('center'))))
 
     pile = urwid.Pile([
         header,
@@ -53,7 +52,7 @@ def main():
 
     pile = line_attr_map(pile)
 
-    urwid.connect_signal(esc, 'click', on_exit_clicked)
+    urwid.connect_signal(esc_btn, 'click', on_exit_clicked)
     urwid.connect_signal(clear_btn, 'click', on_clear, weak_args=[input_text])
     loop = urwid.MainLoop(urwid.Filler(pile, 'top'), palette=PALLETE, unhandled_input=show_or_exit)
     logger.debug(f"Started a loop: {loop.widget}")
