@@ -18,9 +18,9 @@ class InputCell(urwid.Columns):
     """
 
     def __init__(self, editable_text=None):
-        if not editable_text or not isinstance(editable_text, urwid.Text):
+        if editable_text and not isinstance(editable_text, urwid.Edit):
             raise ValueError(
-                f"{self.__class__.__name__} editable_text has to instance of urwid.Text but {editable_text} given")
+                f"{self.__class__.__name__} editable_text has to be instance of urwid.Edit but {editable_text} given")
         logger.info(f"{self.__class__.__name__} editable_text is: {editable_text.text}")
         input_text = urwid.Text(self.render_text())
         cel_col = urwid.Pile([input_text, urwid.LineBox(editable_text)])
