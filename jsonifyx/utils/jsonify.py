@@ -10,7 +10,7 @@ def jsonify(json_input):
     """
     Beautify json input.
     :param json_input: json.
-    :return: pygments highlighted json.
+    :return: formatted json.
     """
     formatted_json = json.dumps(json.loads(json_input), indent=4)
     logger.info(f"Formatted json: {formatted_json}")
