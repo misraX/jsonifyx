@@ -13,7 +13,7 @@ jsonifyx is a Terminal based application for beautifying json using urwid and py
 
 `pip install -r requirements.txt`
 
-`python3 start.py`
+`python start.py`
 
 TODO:
 1. Designing the grid.
