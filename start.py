@@ -9,8 +9,8 @@ from jsonifyx.utils.signals import on_exit_clicked, on_change, on_clear
 from jsonifyx.view.constants import PALLETE
 from jsonifyx.view.footer import Footer
 from jsonifyx.view.header import Header
-from jsonifyx.view.input import InputCell
-from jsonifyx.view.output import OutputCell
+from jsonifyx.view.input_col import InputCell
+from jsonifyx.view.output_col import OutputCell
 
 logging.basicConfig(filename=f"{NAME}.log",
                     filemode='a',

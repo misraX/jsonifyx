@@ -13,7 +13,7 @@ class OutputCell(urwid.Columns):
     ---------pile-----------
     |     Header col       |
     |      ----------      |
-    |    Line [outpt col]  |
+    |    Line [outpt text] |
     ------------------------
     """
 

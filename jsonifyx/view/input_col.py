@@ -13,7 +13,7 @@ class InputCell(urwid.Columns):
     ---------pile-----------
     |     Header col       |
     |      ----------      |
-    |    Line [outpt col]  |
+    |    Line [edit text]  |
     ------------------------
     """
 
